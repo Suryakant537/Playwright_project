@@ -6,6 +6,15 @@ test('has title', async ({ page }) => {
 
   // Expect a title "to contain" a substring.
   await expect(page).toHaveTitle(/Playwright/);
+  await page.addScriptTag({ url: 'https://code.jquery.com/jquery-3.6.0.min.js' });
+  // await page.locator('.getStarted_Sjon').click();
+  page.pause()
+  await page.evaluate("$('.getStarted_Sjon').click();")
+  // Wait for jQuery to load
+  // await page.waitForFunction(() => window.$ !== undefined);
+  // await page.evaluate(() => {
+  //   $('.getStarted_Sjon').click();
+  // });
 });
 
 test('get started link', async ({ page }) => {

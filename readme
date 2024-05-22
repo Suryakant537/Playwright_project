@@ -1,0 +1,7 @@
+
+Install playWright
+    - npm init playwright@latest
+
+Commands to run testcases
+    - API : npx playwright test tests/apiTest.spec.js
+    - UI  : npx playwright test tests/UiTest.spec.js
